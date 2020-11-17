@@ -16,6 +16,8 @@ module Edit.List
 , elementr
 , elementl
 , newLine
+, selementl
+, selementr
 ) where
 
 
@@ -64,6 +66,11 @@ replaceA e a x = if e `elem` x then replaceA e a (replaceFl e a x) else x
 elementl a (x:xs) = head $ rotatel (a-1) (x:xs)
 
 elementr a (x:xs) = last $ rotater (a-1) (x:xs)
+
+
+selementl a (x:xs) = (rotateEl a (x:xs))+1
+
+selementr a (x:xs) = (rotateEr a (x:xs))+1
 
 
 newLine x =  putStrLn (init $ unlines $ [b | a <- x, let b = show(a)])
