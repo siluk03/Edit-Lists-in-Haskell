@@ -66,4 +66,4 @@ elementl a (x:xs) = head $ rotatel (a-1) (x:xs)
 elementr a (x:xs) = last $ rotater (a-1) (x:xs)
 
 
-newLine x =  putStrLn (unlines $ [b | a <- x, let b = show(a)])
+newLine x =  putStrLn (init $ unlines $ [b | a <- x, let b = show(a)])
